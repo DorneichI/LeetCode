@@ -61,3 +61,72 @@ struct ListNode* sortList(struct ListNode* head) {
     mergeSort(head, length);
     return head;
 }
+
+// /**
+//  * Definition for singly-linked list.
+//  * struct ListNode {
+//  *     int val;
+//  *     struct ListNode *next;
+//  * };
+//  */
+// void merge(int* array, int left, int mid, int right) {
+//     int i, j, k;
+//     int leftSize = mid - left + 1;
+//     int rightSize = right - mid;
+
+//     int* leftCopy = malloc(leftSize * sizeof(int));
+//     int* rightCopy = malloc(rightSize * sizeof(int));
+
+//     for (i = 0; i < leftSize; i++) {
+//         leftCopy[i] = array[left + i];
+//     }
+//     for (j = 0; j < rightSize; j++) {
+//         rightCopy[j] = array[mid + 1 + j];
+//     }
+
+//     i = 0;
+//     j = 0;
+//     k = left;
+//     while (i < leftSize && j < rightSize) {
+//         if (leftCopy[i] < rightCopy[j]) array[k++] = leftCopy[i++];
+//         else array[k++] = rightCopy[j++];
+//     }
+//     while (i < leftSize) {
+//         array[k++] = leftCopy[i++];
+//     }
+//     while (j < rightSize) {
+//         array[k++] = rightCopy[j++];
+//     }
+//     free(leftCopy);
+//     free(rightCopy);
+// }
+
+// void mergeSort(int* array, int left, int right) {
+//     if (left < right) {
+//         int mid = left + (right - left) / 2;
+//         mergeSort(array, left, mid);
+//         mergeSort(array, mid + 1, right);
+
+//         merge(array, left, mid, right);
+//     }
+// }
+
+// struct ListNode* sortList(struct ListNode* head) {
+//     int length;
+//     struct ListNode* cpy = head;
+//     for (length = 0; cpy; length++) cpy = cpy->next;
+//     int* array = malloc(length * sizeof(int));
+//     cpy = head;
+//     for (length = 0; cpy; length++) {
+//         array[length] = cpy->val;
+//         cpy = cpy->next;
+//     }
+//     mergeSort(array, 0, length - 1);
+//     cpy = head;
+//     for (length = 0; cpy; length++) {
+//         cpy->val = array[length];
+//         cpy = cpy->next;
+//     }
+//     free(array);
+//     return head;
+// }
