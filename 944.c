@@ -14,5 +14,6 @@ int minDeletionSize(char** strs, int strsSize) {
     for (i = 0; i < strSize; i++) {
         if (toDelete[i] > 0) result++;
     }
+    free(toDelete);
     return result;
 }
