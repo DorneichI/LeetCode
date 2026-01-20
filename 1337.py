@@ -2,7 +2,6 @@ class Solution:
     def kWeakestRows(self, mat: List[List[int]], k: int) -> List[int]:
         strength = []
         for i in range(len(mat)):
-            print(strength)
             if len(strength) < k:
                 heapq.heappush(strength, (-sum(mat[i]), -i))
             elif (-sum(mat[i]), -i) > strength[0]:
