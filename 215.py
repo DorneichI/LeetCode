@@ -7,3 +7,4 @@ class Solution:
             elif i > heap[0]:
                 heapq.heapreplace(heap, i)
         return heap[0]
+
