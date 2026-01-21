@@ -5,7 +5,6 @@ class Solution:
         i = -1
         while low <= high:
             mid = low + (high - low) // 2
-            print(mid, nums[mid], target)
             if nums[mid] == target:
                 i = mid
                 break
@@ -20,7 +19,6 @@ class Solution:
         low = 0
         high = i
         while low < high:
-            print(low, high)
             mid = low + (high - low) // 2
             if nums[mid] == target:
                 high = mid
@@ -31,7 +29,6 @@ class Solution:
         low = i
         high = len(nums) - 1
         while low < high:
-            print(low, high)
             mid = math.ceil(low + (high - low) / 2)
             if nums[mid] == target:
                 low = mid
